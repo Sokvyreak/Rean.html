@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="km" data-bs-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>SME ព័ត៌មាន — ព័ត៌មានអាជីវកម្មខ្នាតតូច និងមធ្យម</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Khmer:wght@400;600;700&family=Noto+Sans+Khmer:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Bootstrap 5.3 (native dark mode support via data-bs-theme) -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Utility strip -->
+<div class="utility-strip d-none d-md-block">
+  <div class="container d-flex justify-content-between align-items-center py-1 small">
+    <span id="today-date"></span>
+    <div class="d-flex gap-3">
+      <a href="#" class="link-light-muted">តេឡេក្រាម</a>
+      <a href="#" class="link-light-muted">ទំនាក់ទំនង</a>
+      <a href="#" class="link-light-muted">ខ្មែរ / EN</a>
+    </div>
+  </div>
+</div>
+
+<!-- Masthead -->
+<header class="masthead border-bottom">
+  <div class="container d-flex flex-wrap align-items-center justify-content-between py-3 gap-3">
+    <div class="d-flex align-items-center gap-3">
+      <div class="brand-mark">SME</div>
+      <div>
+        <div class="brand-name">SME ព័ត៌មាន</div>
+        <div class="brand-tag small text-secondary">អង្គភាពសារព័ត៌មានអាជីវកម្មខ្នាតតូច-មធ្យម</div>
+      </div>
+    </div>
+    <div class="d-flex align-items-center gap-2">
+      <!-- Dark mode toggle button -->
+      <button id="theme-toggle" class="btn btn-outline-secondary btn-sm rounded-circle theme-btn" type="button" title="ប្តូររចនាប័ទ្មងងឹត/ភ្លឺ">
+        <i class="bi bi-moon-stars-fill" id="theme-icon"></i>
+      </button>
+      <a class="btn btn-outline-primary btn-sm d-none d-sm-inline-block" href="#">ចុះឈ្មោះ</a>
+      <a class="btn btn-danger btn-sm" href="#">ផ្សព្វផ្សាយ</a>
+    </div>
+  </div>
+</header>
+
+<!-- Nav -->
+<nav class="navbar navbar-expand-lg mainnav sticky-top">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNavCollapse">
+      <ul class="navbar-nav flex-row flex-wrap gap-1 gap-lg-0">
+        <li class="nav-item"><a class="nav-link active" href="#">ទំព័រដើម</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">អាជីវកម្មខ្នាតតូច-មធ្យម</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">នវានុវត្តន៍-បច្ចេកវិទ្យា</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">សង្គមជាតិ-សេដ្ឋកិច្ច</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">ធនាគារ-ហិរញ្ញវត្ថុ</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">ពាណិជ្ជកម្ម</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">គំនិតអាជីវកម្ម</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">វីដេអូ</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Breaking ticker -->
+<div class="ticker d-flex align-items-center">
+  <div class="ticker-label">ថ្មីៗ</div>
+  <div class="ticker-track" id="ticker-track"></div>
+</div>
+
+<!-- Ad strip -->
+<div class="ad-strip py-3 border-bottom">
+  <div class="container">
+    <div class="row g-2 row-cols-2 row-cols-md-4">
+      <div class="col"><div class="ad-box">ស្លាកយីហោ ១</div></div>
+      <div class="col"><div class="ad-box">ស្លាកយីហោ ២</div></div>
+      <div class="col d-none d-md-block"><div class="ad-box">ស្លាកយីហោ ៣</div></div>
+      <div class="col d-none d-md-block"><div class="ad-box">ស្លាកយីហោ ៤</div></div>
+    </div>
+  </div>
+</div>
+
+<main class="container py-4">
+
+  <!-- Featured -->
+  <section class="row g-4 mb-5">
+    <div class="col-lg-7">
+      <article class="feature-main card border-0 shadow-sm h-100">
+        <div class="feature-img"></div>
+        <div class="card-body">
+          <span class="badge bg-danger mb-2">សេដ្ឋកិច្ច</span>
+          <h3 class="feature-title">ក្រសួងពាណិជ្ជកម្មប្រកាសផែនការជំរុញការនាំចេញផលិតផលកសិកម្មទៅកាន់ទីផ្សារថ្មី</h3>
+          <p class="text-secondary small mb-2">មន្ត្រីជាន់ខ្ពស់លើកឡើងថា គោលនយោបាយថ្មីនេះនឹងផ្តោតលើការកាត់បន្ថយបន្ទុករដ្ឋបាល និងបង្កើនលទ្ធភាពទទួលបានហិរញ្ញប្បទានសម្រាប់សហគ្រាសខ្នាតតូច។</p>
+          <div class="meta small text-muted">សេដ្ឋកិច្ច · ២ម៉ោងមុន</div>
+        </div>
+      </article>
+    </div>
+    <div class="col-lg-5 d-flex flex-column gap-3" id="mini-list"></div>
+  </section>
+
+  <div class="row g-4">
+    <!-- Articles -->
+    <div class="col-lg-8">
+      <div class="d-flex align-items-center mb-3">
+        <h2 class="section-title mb-0">អត្ថបទព័ត៌មានថ្មីៗ</h2>
+        <a href="#" class="ms-auto small fw-semibold text-decoration-none">មើលទាំងអស់ →</a>
+      </div>
+
+      <div class="row g-3" id="article-grid">
+        <!-- injected by main.js -->
+        <div class="col-12 text-center text-secondary py-5" id="loading-msg">កំពុងផ្ទុកព័ត៌មាន...</div>
+      </div>
+
+      <nav class="mt-4" aria-label="Pagination">
+        <ul class="pagination justify-content-center flex-wrap" id="pagination"></ul>
+      </nav>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="col-lg-4">
+      <div class="side-box card border-0 shadow-sm mb-3">
+        <div class="card-body">
+          <h3 class="side-title">ព័ត៌មានពេញនិយម</h3>
+          <div id="popular-list"></div>
+        </div>
+      </div>
+
+      <div class="side-box card border-0 shadow-sm mb-3">
+        <div class="card-body p-0">
+          <div class="ad-box side-ad">ផ្ទាំងផ្សាយពាណិជ្ជកម្ម</div>
+        </div>
+      </div>
+
+      <div class="newsletter card border-0 shadow-sm mb-3">
+        <div class="card-body">
+          <h3 class="side-title text-white">ជាវព័ត៌មានប្រចាំសប្តាហ៍</h3>
+          <p class="small mb-3">ទទួលបានព័ត៌មានអាជីវកម្ម និងសេដ្ឋកិច្ចសំខាន់ៗផ្ញើផ្ទាល់ដល់អ៊ីមែលរបស់អ្នក។</p>
+          <form id="newsletter-form">
+            <input type="email" class="form-control form-control-sm mb-2" placeholder="អាសយដ្ឋានអ៊ីមែល" required>
+            <button type="submit" class="btn btn-danger btn-sm w-100">ជាវឥឡូវ</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="side-box card border-0 shadow-sm">
+        <div class="card-body">
+          <h3 class="side-title">តាមដានយើងខ្ញុំ</h3>
+          <div class="row g-2">
+            <div class="col-6"><a href="#" class="btn btn-sm social-btn w-100">Facebook</a></div>
+            <div class="col-6"><a href="#" class="btn btn-sm social-btn w-100">Telegram</a></div>
+            <div class="col-6"><a href="#" class="btn btn-sm social-btn w-100">Instagram</a></div>
+            <div class="col-6"><a href="#" class="btn btn-sm social-btn w-100">YouTube</a></div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer class="mt-5">
+  <div class="container py-5">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <h5 class="text-white">SME ព័ត៌មាន</h5>
+        <p class="small footer-text">អង្គភាពសារព័ត៌មានផ្តោតលើអាជីវកម្មខ្នាតតូច-មធ្យម និងសិប្បកម្មនៅកម្ពុជា។</p>
+        <p class="small footer-text mb-1">ដីឡូត៍លេខ ១១, ផ្លូវ XXX, រាជធានីភ្នំពេញ</p>
+        <p class="small footer-text">096 000 000 · info@example.com</p>
+      </div>
+      <div class="col-6 col-md-2">
+        <h6 class="text-white">ប្រភេទព័ត៌មាន</h6>
+        <ul class="list-unstyled small footer-text">
+          <li><a href="#" class="footer-link">អាជីវកម្ម</a></li>
+          <li><a href="#" class="footer-link">សេដ្ឋកិច្ច</a></li>
+          <li><a href="#" class="footer-link">ហិរញ្ញវត្ថុ</a></li>
+          <li><a href="#" class="footer-link">ពាណិជ្ជកម្ម</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-3">
+        <h6 class="text-white">តំណភ្ជាប់</h6>
+        <ul class="list-unstyled small footer-text">
+          <li><a href="#" class="footer-link">អំពីយើង</a></li>
+          <li><a href="#" class="footer-link">ទំនាក់ទំនង</a></li>
+          <li><a href="#" class="footer-link">ផ្សព្វផ្សាយពាណិជ្ជកម្ម</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h6 class="text-white">បណ្តាញសង្គម</h6>
+        <ul class="list-unstyled small footer-text">
+          <li><a href="#" class="footer-link">Facebook</a></li>
+          <li><a href="#" class="footer-link">Instagram</a></li>
+          <li><a href="#" class="footer-link">Telegram</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom text-center small py-3">© 2026 SME ព័ត៌មាន — គំរូការរចនាសម្រាប់គោលបំណងបង្ហាញប៉ុណ្ណោះ</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

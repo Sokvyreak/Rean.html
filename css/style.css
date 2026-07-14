@@ -1,0 +1,191 @@
+/* ==========================================================
+   SME News — custom styling on top of Bootstrap 5.3
+   Uses Bootstrap's native [data-bs-theme] for light/dark mode
+   ========================================================== */
+
+:root{
+  --navy:#122A4E;
+  --navy-deep:#0B1C36;
+  --red:#C22A2A;
+  --gold:#C7972A;
+  --cream:#F6F3EC;
+}
+
+body{
+  font-family:'Noto Sans Khmer', sans-serif;
+  background-color: var(--cream);
+  transition: background-color .25s ease, color .25s ease;
+}
+
+/* Dark mode background overrides (Bootstrap handles component colors) */
+[data-bs-theme="dark"] body{
+  background-color:#10151F;
+}
+[data-bs-theme="dark"] .card,
+[data-bs-theme="dark"] .masthead,
+[data-bs-theme="dark"] .ad-strip{
+  background-color:#171E2C;
+}
+[data-bs-theme="dark"] .ad-box{
+  background-color:#1E2636;
+  border-color:#2C3550;
+  color:#7C879C;
+}
+
+a{ text-decoration:none; }
+
+/* ---- Utility strip ---- */
+.utility-strip{
+  background: var(--navy-deep);
+  color:#D9C9A0;
+}
+.link-light-muted{ color:#D9C9A0; opacity:.85; }
+.link-light-muted:hover{ opacity:1; text-decoration:underline; color:var(--gold); }
+
+/* ---- Masthead ---- */
+.masthead{ border-bottom:3px solid var(--gold) !important; }
+.brand-mark{
+  width:52px; height:52px; border-radius:8px;
+  background:linear-gradient(145deg,var(--navy),var(--navy-deep));
+  display:flex; align-items:center; justify-content:center;
+  color:var(--gold); font-weight:800; font-size:20px; flex-shrink:0;
+}
+.brand-name{
+  font-family:'Noto Serif Khmer',serif;
+  font-size:26px; font-weight:700; color:var(--navy);
+}
+[data-bs-theme="dark"] .brand-name{ color:#EDE6D2; }
+
+.theme-btn{ width:38px; height:38px; display:flex; align-items:center; justify-content:center; }
+
+/* ---- Nav ---- */
+.mainnav{
+  background: var(--navy);
+}
+.mainnav .nav-link{
+  color:#EDE6D2 !important; font-size:14px; font-weight:500;
+  border-bottom:3px solid transparent; padding:14px 12px !important;
+}
+.mainnav .nav-link:hover,
+.mainnav .nav-link.active{
+  border-bottom-color:var(--gold);
+  background:rgba(255,255,255,.05);
+}
+.navbar-toggler{ border-color:rgba(255,255,255,.3); }
+.navbar-toggler-icon{
+  background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.85)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* ---- Ticker ---- */
+.ticker{ background: var(--red); color:#fff; font-size:13.5px; overflow:hidden; }
+.ticker-label{
+  background: var(--navy-deep); padding:8px 16px; font-weight:700;
+  flex-shrink:0; letter-spacing:.5px;
+}
+.ticker-track{
+  padding:8px 16px; white-space:nowrap;
+  animation: scroll-left 26s linear infinite;
+}
+@keyframes scroll-left{
+  0%{ transform:translateX(0); }
+  100%{ transform:translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce){
+  .ticker-track{ animation:none; }
+}
+
+/* ---- Ad boxes ---- */
+.ad-box{
+  aspect-ratio:3/1;
+  background:repeating-linear-gradient(45deg,#EFEAE0,#EFEAE0 10px,#E6E0D2 10px,#E6E0D2 20px);
+  border:1px dashed #C9C1AC; border-radius:4px;
+  display:flex; align-items:center; justify-content:center;
+  color:#9C927A; font-size:11.5px; letter-spacing:.5px;
+}
+.side-ad{ aspect-ratio:1/1; border-radius:.375rem; }
+
+/* ---- Section titles ---- */
+.section-title{
+  font-family:'Noto Serif Khmer',serif;
+  font-size:20px; font-weight:700; color:var(--navy);
+  position:relative; padding-left:14px;
+}
+[data-bs-theme="dark"] .section-title{ color:#EDE6D2; }
+.section-title::before{
+  content:''; position:absolute; left:0; top:2px; bottom:2px;
+  width:5px; background:var(--red); border-radius:2px;
+}
+
+/* ---- Feature card ---- */
+.feature-img{
+  aspect-ratio:16/9;
+  background:linear-gradient(135deg,#274972,#0B1C36);
+  border-top-left-radius:.375rem; border-top-right-radius:.375rem;
+}
+.feature-title{
+  font-family:'Noto Serif Khmer',serif;
+  font-size:19px; font-weight:700; line-height:1.5;
+}
+
+/* ---- Mini cards ---- */
+.mini-card{ display:flex; gap:12px; }
+.mini-card .thumb{
+  width:92px; height:70px; border-radius:6px; flex-shrink:0;
+  background:linear-gradient(135deg,var(--gold),#8a6a1c);
+}
+.mini-card h4{ font-size:13.5px; font-weight:600; line-height:1.45; }
+
+/* ---- Article cards ---- */
+.article-card .img{
+  aspect-ratio:16/10;
+  background:linear-gradient(135deg,#3A5A85,#16273f);
+  border-top-left-radius:.375rem; border-top-right-radius:.375rem;
+}
+.article-card h5{ font-size:14.5px; font-weight:700; line-height:1.5; }
+
+/* ---- Sidebar ---- */
+.side-title{
+  font-family:'Noto Serif Khmer',serif;
+  font-size:16px; font-weight:700; color:var(--navy);
+  padding-bottom:10px; margin-bottom:14px; border-bottom:2px solid var(--gold);
+}
+[data-bs-theme="dark"] .side-title{ color:#EDE6D2; }
+
+.popular-item{ display:flex; gap:10px; padding:10px 0; border-bottom:1px solid rgba(0,0,0,.08); }
+.popular-item:last-child{ border-bottom:none; }
+[data-bs-theme="dark"] .popular-item{ border-bottom-color:rgba(255,255,255,.08); }
+.popular-num{
+  font-weight:800; font-size:20px; color:var(--gold); width:26px; flex-shrink:0;
+}
+.popular-item h6{ font-size:13px; font-weight:600; line-height:1.45; margin:0; }
+
+.newsletter{ background: var(--navy) !important; color:#fff; }
+.social-btn{ background: var(--cream); color: var(--navy); font-weight:600; }
+.social-btn:hover{ background: var(--gold); color:#fff; }
+[data-bs-theme="dark"] .social-btn{ background:#1E2636; color:#EDE6D2; }
+
+/* ---- Footer ---- */
+footer{ background: var(--navy-deep); color:#B9C2D2; }
+.footer-text{ color:#9AA6BB; }
+.footer-link{ color:#9AA6BB; }
+.footer-link:hover{ color: var(--gold); }
+.footer-bottom{ border-top:1px solid rgba(255,255,255,.08); color:#7C879C; }
+
+/* ---- Pagination ---- */
+.pagination .page-link{ color: var(--navy); }
+.pagination .active .page-link{ background: var(--navy); border-color: var(--navy); }
+[data-bs-theme="dark"] .pagination .page-link{
+  background-color:#171E2C; border-color:#2C3550; color:#D9C9A0;
+}
+
+/* ---- Responsive tweaks ---- */
+@media (max-width: 767.98px){
+  .brand-name{ font-size:20px; }
+  .feature-title{ font-size:16px; }
+  .ticker-label{ padding:8px 10px; font-size:12px; }
+  .utility-strip{ font-size:11px; }
+}
+@media (max-width: 575.98px){
+  .brand-mark{ width:42px; height:42px; font-size:16px; }
+  .mini-card .thumb{ width:76px; height:58px; }
+}
